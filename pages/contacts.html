@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages/contacts.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <script src="../scripts/storage.js" defer></script>
+    <script src="../scripts/pages/contacts.ui.js" defer></script>
+    <script src="../scripts/pages/contacts.logic.js" defer></script>
+</head>
+
+<body onload="initContacts()">
+    <header>
+        <div>
+            <p class="header-line">Kanban Project Management Tool</p>
+        </div>
+        <div class="header-right">
+            <a href="./help.html">
+                <img class="help-icon" src="../assets/incon/help.svg" alt="Help-Icon" />
+            </a>
+            <p class="circle">JJ</p>
+        </div>
+    </header>
+
+    <aside>
+        <div>
+            <img class="logo-icon" src="../assets/incon/Join logo vector.svg" alt="Logo" />
+        </div>
+
+        <section class="sidebar-top">
+            <table class="sidebar-top">
+                <tr class="menu">
+                    <td>
+                        <a href="./summary.html">
+                            <img src="../assets/incon/Icons.svg" class="summary-icon icon" alt="Summary-Icon" />
+                            <span>Summary</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="menu">
+                    <td>
+                        <a href="./add-task.html">
+                            <img src="../assets/incon/edit_square.svg" class="task-icon icon" alt="Task-Icon" />
+                            <span>Add Task</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="menu">
+                    <td>
+                        <a href="./board.html">
+                            <img src="../assets/incon/vectors.svg" class="board-icon icon" alt="Board-Icon" />
+                            <span>Board</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="menu">
+                    <td>
+                        <a href="./contacts.html" class="is-active">
+                            <img src="../assets/incon/perm_contact_calendar.svg" class="contacts-icon icon"
+                                alt="Contacts-Icon" />
+                            <span>Contacts</span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="sidebar-bottom">
+            <table>
+                <tr class="menu-bottom padding-bottom">
+                    <td><a href="./privacy-policy.html"><span>Privacy Policy</span></a></td>
+                </tr>
+                <tr class="menu-bottom">
+                    <td><a href="./legal-notice.html"><span>Legal Notice</span></a></td>
+                </tr>
+            </table>
+        </section>
+    </aside>
+
+    <main class="contacts-main">
+        <section class="contacts-shell">
+            <div class="contacts-left">
+                <div class="contacts-left__top">
+                    <button class="btn-primary contacts-add-btn" type="button" onclick="openAddContactOverlay()">Add new
+                        contact</button>
+                </div>
+
+                <div class="contacts-list" id="contactsList"></div>
+            </div>
+
+            <div class="contacts-right">
+                <div class="contacts-head">
+                    <h1 class="contacts-title">Contacts</h1>
+                    <div class="contacts-subtitle">Better with a team</div>
+                </div>
+
+                <div class="contact-detail" id="contactDetail"></div>
+            </div>
+        </section>
+
+        <div id="contactOverlay" class="overlay hidden" onclick="closeContactOverlay()">
+            <div class="overlay__panel" onclick="event.stopPropagation()">
+                <div class="overlay__left">
+                    <img class="overlay__logo" src="../assets/incon/Join logo vector.svg" alt="Join" />
+                    <h2 class="overlay__leftTitle" id="overlayTitle">Add contact</h2>
+                    <p class="overlay__leftSub">Tasks are better with a team!</p>
+                    <div class="overlay__leftLine"></div>
+                </div>
+
+                <button class="overlay__close" type="button" onclick="closeContactOverlay()">×</button>
+
+                <div class="overlay__right">
+                    <div class="overlay__content">
+                        <div class="overlay__avatar" id="overlayAvatar">A</div>
+
+                        <form class="overlay__form" onsubmit="return false">
+                            <div class="field">
+                                <div class="field__wrap">
+                                    <input id="contactNameInput" type="text" placeholder="Name" />
+                                    <img class="field__icon" src="../assets/img/icons/person.svg" alt="" />
+                                </div>
+                                <div class="field__error" id="contactNameError"></div>
+                            </div>
+
+                            <div class="field">
+                                <div class="field__wrap">
+                                    <input id="contactEmailInput" type="email" placeholder="Email" />
+                                    <img class="field__icon" src="../assets/img/icons/mail.svg" alt="" />
+                                </div>
+                                <div class="field__error" id="contactEmailError"></div>
+                            </div>
+
+                            <div class="field">
+                                <div class="field__wrap">
+                                    <input id="contactPhoneInput" type="text" placeholder="Phone" />
+                                    <img class="field__icon" src="../assets/img/icons/call.svg" alt="" />
+                                </div>
+                                <div class="field__error" id="contactPhoneError"></div>
+                            </div>
+
+                            <div class="overlay__actions">
+                                <button class="btn-ghost" type="button" onclick="closeContactOverlay()">Cancel</button>
+                                <button class="btn-primary" type="button" onclick="submitContact()">Create
+                                    contact</button>
+                            </div>
+
+                            <div class="form-note" id="contactFormNote"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

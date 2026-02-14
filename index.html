@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/pages/login.css">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="shortcut icon" href="./assets/icon/Capa 1.svg" type="image/x-icon">
 
 </head>
 
@@ -21,7 +22,7 @@
                 </div>
                 <div class="header_right">
                     <p class="no_user">Not a Join user?</p>
-                    <button class="Sign_btn btn">Sign up</button>
+                    <button class="Sign_btn btn" onclick="signUp">Sign up</button>
                 </div>
             </div>
         </header>
@@ -34,18 +35,18 @@
 
                     <form class="login_form">
                         <div class="field">
-                            <input type="text" name="email" placeholder="EMail">
-                            <img class="input_icon" src="./assets/icon/mail.svg" alt="">
+                            <input type="text" name="email" placeholder="EMail" required>
+                            <img class="input_icon" src="./assets/icon/mail.svg" alt="Mail Logo">
                         </div>
 
                         <div class="field">
-                            <input type="text" name="passwort" placeholder="Password">
-                            <img class="input_icon" src="./assets/icon/lock.svg" alt="">
+                            <input type="text" name="passwort" placeholder="Password" required>
+                            <img class="input_icon" src="./assets/icon/lock.svg" alt="Password Logo">
                         </div>
 
                         <div class="btn_group">
-                            <button class="btn login_btn">Log in</button>
-                            <button class="guest_btn">Guest Log in</button>
+                            <button class="btn login_btn" onclick="logIn">Log in</button>
+                            <button class="guest_btn" onclick="guestLogIn">Guest Log in</button>
                         </div>
 
                     </form>

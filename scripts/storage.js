@@ -1,7 +1,7 @@
 // #region Storage state
 const storageState = {
-  useFirebase: false,
-  firebaseBaseUrl: "",
+  useFirebase: true,
+  firebaseBaseUrl: "https://join-41a54-default-rtdb.europe-west1.firebasedatabase.app/",
   contactsKey: "joinContacts",
 };
 // #endregion
@@ -59,9 +59,11 @@ function saveContactsToLocal(list) {
 async function loadContactsFromFirebase() {
   const url = buildFirebaseUrl("contacts.json");
   const response = await fetch(url);
+  if (!response.ok) return [];
   const data = await response.json();
+  if (!data || data.error) return [];
   if (!data) return [];
-  const list = Object.values(data);
+  const list = Object.values(data).filter((contact) => contact && typeof contact === "object" && contact.id);
   return Array.isArray(list) ? list : [];
 }
 

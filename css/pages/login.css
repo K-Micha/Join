@@ -1,9 +1,10 @@
 * {
     text-decoration: none;
 }
- body{
+
+body {
     background: rgb(246, 247, 248);
- }
+}
 
 .join_logo {
     width: 100px;
@@ -30,7 +31,8 @@
     margin: 0 auto;
     height: 95vh;
 }
-.content_wrapper{
+
+.content_wrapper {
     display: flex;
     justify-content: center;
 }
@@ -156,4 +158,69 @@ input {
     font-size: 16px;
     font-weight: 400;
     color: rgba(168, 168, 168, 1);
+}
+
+.sign_up {
+    box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.04);
+    height: 630px;
+    width: 598px;
+    border-radius: 30px;
+    margin-top: 90px;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: white;
+}
+
+.police {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.police a {
+    color: rgba(41, 171, 226, 1);
+    font-size: 16px;
+}
+
+.police p {
+    font-size: 16px;
+}
+
+.checkbox {
+    height: 24px;
+    width: 24px;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+}
+
+.Sign_up_btn {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+.arrow{
+    left: 88px;
+    position: absolute;
+    left: 65px;
+    position: absolute;
+    top: 110px;
+}
+.underline{
+   background-color: rgba(41, 171, 226, 1);
+   height: 3px;
+   width: 150px;
+   margin-top: -20px;
+margin-bottom: 30px;
 }

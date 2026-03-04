@@ -1,7 +1,7 @@
 // #region Storage state
 const storageState = {
   useFirebase: true,
-  firebaseBaseUrl: "https://join-41a54-default-rtdb.europe-west1.firebasedatabase.app/",
+  firebaseBaseUrl: "https://join-eeb75-default-rtdb.europe-west1.firebasedatabase.app/",
   contactsKey: "joinContacts",
   tasksKey: "joinTasks",
   usersKey: "joinUsers",

@@ -102,7 +102,7 @@ function buildUserInitials(name) {
 function logOutUser(event) {
     if (event) event.preventDefault();
     clearSessionUser();
-    window.location.href = "./index.html";
+    window.location.href = "../index.html";
     return false;
 }
 
@@ -110,7 +110,7 @@ function logOutUser(event) {
  * Redirects to the login page.
  */
 function redirectToLoginPage() {
-    window.location.href = "./index.html";
+    window.location.href = "../index.html";
 }
 
 /**
@@ -122,5 +122,5 @@ function goBackOrFallback(fallbackUrl) {
         window.history.back();
         return;
     }
-    window.location.href = fallbackUrl || "./index.html";
+    window.location.href = fallbackUrl || "../index.html";
 }

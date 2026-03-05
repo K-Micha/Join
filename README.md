@@ -7,7 +7,7 @@ https://k-micha.github.io/join/
 
 ## Screenshot
 
-![JOIN Board Screenshot](assets/img/join_board.png)
+![JOIN Board Screenshot](assets/Img/join_board.png)
 
 ## Tech Stack
 HTML  
